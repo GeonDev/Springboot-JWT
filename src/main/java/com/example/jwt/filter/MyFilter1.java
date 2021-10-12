@@ -27,8 +27,5 @@ public class MyFilter1 implements Filter {
                 System.out.println("인증 안됨");
             }
         }
-
-
-      
     }
 }

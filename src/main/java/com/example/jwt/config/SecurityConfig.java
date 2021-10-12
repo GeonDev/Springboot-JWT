@@ -25,7 +25,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     private UserRepository userRepository;
 
-    //스프링 IOC에   패스워드 인코더를 등록시킨다.
+    //스프링 IOC에 패스워드 인코더를 등록시킨다.
     @Bean
     public BCryptPasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
@@ -35,7 +35,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         //시큐리티 필터 실행 전에 MyFilter1() 실행
-        http.addFilterBefore(new MyFilter1(), SecurityContextPersistenceFilter.class);
+        //http.addFilterBefore(new MyFilter1(), SecurityContextPersistenceFilter.class);
 
         http.csrf().disable();
         //세션을 사용하지 않겠다.
